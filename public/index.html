@@ -37,5 +37,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB5RP44_MIj2GOdK620NhHrJcD5J8bz9MU",
+        authDomain: "jkkr-react-lab.firebaseapp.com",
+        databaseURL: "https://jkkr-react-lab.firebaseio.com",
+        projectId: "jkkr-react-lab",
+        storageBucket: "jkkr-react-lab.appspot.com",
+        messagingSenderId: "633210578047"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>
