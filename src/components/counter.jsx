@@ -9,7 +9,7 @@ class Counter extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="mt-5 ml-3">
+        <div className="mt-5 ml-4">
           {this.props.counter.children}
           <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
           <button

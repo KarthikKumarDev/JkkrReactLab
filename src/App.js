@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar";
 import Counters from "./components/counters";
+import Description from "./components/description";
 
 class App extends Component {
   state = {
@@ -20,6 +21,7 @@ class App extends Component {
             onIncrement={this.handleIncrement}
             counters={this.state.counters}
           />
+          <Description />
         </main>
       </React.Fragment>
     );
