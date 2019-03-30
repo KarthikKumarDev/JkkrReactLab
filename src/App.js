@@ -23,20 +23,19 @@ class App extends Component {
     console.log("App - rendered");
     return (
       <React.Fragment>
-        <div className="App">
-          <NavBar
-            totalCounters={this.state.counters.filter(c => c.value > 0).length}
+        <NavBar
+          totalCounters={this.state.counters.filter(c => c.value > 0).length}
+        />
+        <main className="">
+          <Counters
+            onReset={this.handleReset}
+            onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
+            counters={this.state.counters}
           />
-          <main className="">
-            <Counters
-              onReset={this.handleReset}
-              onDelete={this.handleDelete}
-              onIncrement={this.handleIncrement}
-              counters={this.state.counters}
-            />
-            <Description />
-          </main>
-        </div>
+          <Description />
+        </main>
       </React.Fragment>
     );
   }
@@ -60,6 +59,15 @@ class App extends Component {
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].value++;
+
+    this.setState({ counters });
+  };
+
+  handleDecrement = counter => {
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value--;
 
     this.setState({ counters });
   };
