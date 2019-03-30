@@ -6,6 +6,12 @@ class Counter extends Component {
   //     this.handleIncrement = this.handleIncrement.bind(this);
   //   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // Compare the State and props 
+    // Make AJAX request to get data from Server based on the observed changes
+    console.log("prev", prevProps, "state", prevState)
+  }
+
   render() {
     return (
       <React.Fragment>
